@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Gemini
-genai.configure(api_key="AIzaSyDAjN9WiI--KNg2bQ1CuGMSVKnAFWWOQSc")
+genai.configure(api_key="Gemini_Google_Api_key")
 model = genai.GenerativeModel("gemini-flash-latest")
 
 # DB connection (from your reference)
