@@ -20,23 +20,23 @@ function App() {
   };
 
   const handleChat = async () => {
-    const res = await axios.post("http://localhost:5000/chat", {
-      message: chat,
-      category: category,
-    });
+  const res = await axios.post("http://localhost:8080/api/ai/chat", {
+    message: chat,
+    category: category,
+  });
 
-    setChatReply(res.data.reply);
-    setAdvice("");
-  };
+  setChatReply(res.data.reply);
+  setAdvice("");
+};
 
   const handleAdvice = async () => {
-    const res = await axios.post("http://localhost:5000/suggest", {
-      text: chatReply,
-      category: category,
-    });
+  const res = await axios.post("http://localhost:8080/api/ai/suggest", {
+    text: chatReply,
+    category: category,
+  });
 
-    setAdvice(res.data.advice);
-  };
+  setAdvice(res.data.advice);
+};
 
   return (
     <div className="App">
